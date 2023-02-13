@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <title>Smart Spend</title>
+</head>
+<body>
+    <div class="container">
+        <header>Expense Tracker</header>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form first">
+            <div class="details company">
+                <span class="title"></span>
+                
+                <div class="fields">
+                    <div class="input-fields">
+                        <label>Expense Name</label>
+                        <input type="text" placeholder="Enter Expense Name" required name="expenseName" id="clientId">
+                    </div>
+
+                    <div class="input-fields">
+                        <label>Expense Amount</label>
+                        <input type="number" placeholder="Enter Amount" required name="expenseAmount">
+                    </div>
+
+                    <div class="input-fields">
+                        <label>Date</label>
+                        <input type="date" name="date" id="date-1" required>
+                    </div>
+
+                <button class="sumbit" id="genrate" type="submit">
+                    <span class="btnText">Submit</span>
+                    <i class="uil uil-navigator"></i>
+                </button>
+            </div>
+        </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

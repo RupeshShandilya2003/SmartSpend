@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}">
+    {% comment %} <script src="{%static 'js/script.js' %}"></script> {% endcomment %}
+</head>
+<body>
+      <div>
+        <table>
+            <tr id="header">
+                <th>Expense Name</th>
+                <th>Expense Amount</th>
+                <th>Date</th>
+            </tr>
+            {% for index in formData %}
+            <tr>
+                <td>{{index.expenseName}}</td>
+                <td>{{index.expenseAmount}}</td>
+                <td>{{index.date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
